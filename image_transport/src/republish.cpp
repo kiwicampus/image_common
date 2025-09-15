@@ -85,7 +85,7 @@ int main(int argc, char ** argv)
 
     auto sub = image_transport::create_subscription(
       node.get(), in_topic, std::bind(pub_mem_fn, &pub, std::placeholders::_1),
-      in_transport, rmw_qos_profile_default, sub_options);
+      in_transport, rmw_qos_profile_sensor_data);
     rclcpp::spin(node);
   } else {
     // Use one specific transport for output
