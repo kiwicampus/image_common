@@ -105,7 +105,7 @@ int main(int argc, char ** argv)
     PublishMemFn pub_mem_fn = &Plugin::publishPtr;
     auto sub = image_transport::create_subscription(
       node.get(), in_topic,
-      std::bind(pub_mem_fn, pub.get(), std::placeholders::_1), in_transport);
+      std::bind(pub_mem_fn, pub.get(), std::placeholders::_1), in_transport, rmw_qos_profile_sensor_data);
     rclcpp::spin(node);
   }
 
