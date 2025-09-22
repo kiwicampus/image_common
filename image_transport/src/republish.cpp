@@ -112,7 +112,7 @@ void Republisher::initialize()
 
     // Use Publisher::publish as the subscriber callback
     typedef void (image_transport::Publisher::* PubMemFn)(const sensor_msgs::msg::Image::ConstSharedPtr &) const;
-    PubMemFn pub_mem_fn = &image_transport::Publisher::publishPtr;
+    PubMemFn pub_mem_fn = &image_transport::Publisher::publish;
 
     rclcpp::SubscriptionOptions sub_options;
     sub_options.qos_overriding_options = qos_override_options;
